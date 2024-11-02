@@ -5,6 +5,7 @@ before_script: []
 pages:
   script:
     - deno run -A actions/build.ts public
+    - gzip -rkv -9 public
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL

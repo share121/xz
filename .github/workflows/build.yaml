@@ -39,6 +39,9 @@ jobs:
           repo: ${{ github.repository }}
         run: deno run -A actions/build.ts
 
+      - name: Gzip
+        run: gzip -rkv -9 dist
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
