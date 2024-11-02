@@ -1,17 +1,19 @@
 import { minify } from "npm:html-minifier";
 
-await Deno.mkdir("dist").catch(async () => {
-  await Deno.remove("dist", { recursive: true });
-  await Deno.mkdir("dist");
+const ouputDir = Deno.args[0] ?? "dist";
+
+await Deno.mkdir(ouputDir).catch(async () => {
+  await Deno.remove(ouputDir, { recursive: true });
+  await Deno.mkdir(ouputDir);
 });
 
-Deno.copyFile("src/HYZhuanShuF.ttf", "dist/HYZhuanShuF.ttf");
-Deno.copyFile("src/HYZhuanShuF.woff", "dist/HYZhuanShuF.woff");
-Deno.copyFile("src/HYZhuanShuF.woff2", "dist/HYZhuanShuF.woff2");
+Deno.copyFile("src/HYZhuanShuF.ttf", ouputDir + "/HYZhuanShuF.ttf");
+Deno.copyFile("src/HYZhuanShuF.woff", ouputDir + "/HYZhuanShuF.woff");
+Deno.copyFile("src/HYZhuanShuF.woff2", ouputDir + "/HYZhuanShuF.woff2");
 
 const raw = await Deno.readTextFile("src/index.html");
 Deno.writeTextFile(
-  "dist/index.html",
+  ouputDir + "/index.html",
   minify(raw, {
     collapseBooleanAttributes: true,
     collapseInlineTagWhitespace: true,
