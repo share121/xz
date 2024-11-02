@@ -6,6 +6,8 @@ await Deno.mkdir("dist").catch(async () => {
 });
 
 Deno.copyFile("src/HYZhuanShuF.ttf", "dist/HYZhuanShuF.ttf");
+Deno.copyFile("src/HYZhuanShuF.woff", "dist/HYZhuanShuF.woff");
+Deno.copyFile("src/HYZhuanShuF.woff2", "dist/HYZhuanShuF.woff2");
 
 const raw = await Deno.readTextFile("src/index.html");
 Deno.writeTextFile(
