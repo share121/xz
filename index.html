@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小篆生成</title>
+    <style>
+      @font-face {
+        font-family: HYZhuanShuF;
+        src: url("HYZhuanShuF.ttf");
+      }
+      html {
+        font-size: 80px;
+      }
+      #stage {
+        font-family: HYZhuanShuF;
+      }
+      #input {
+        width: 100%;
+        font-size: 0.8rem;
+        background: inherit;
+        color: inherit;
+        resize: vertical;
+      }
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <textarea
+      id="input"
+      placeholder="输入要生成小篆的文本"
+      oninput="generate()"
+    ></textarea>
+    <script>
+      function generate() {
+        stage.innerText = input.value;
+      }
+    </script>
+  </body>
+</html>
