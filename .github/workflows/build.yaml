@@ -19,7 +19,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY }}
         with:
           source-repo: git@github.com:share121/xz.git
-          destination-repo: git@gitlab.com:share121/share121.gitlab.io.git
+          destination-repo: git@gitlab.com:share1211/xz.git
 
   build-and-deploy:
     concurrency:
