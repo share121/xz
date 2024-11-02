@@ -40,12 +40,7 @@
     <textarea
       id="input"
       placeholder="输入要生成小篆的文本"
-      oninput="generate()"
+      oninput="stage.innerText = input.value"
     ></textarea>
-    <script>
-      function generate() {
-        stage.innerText = input.value;
-      }
-    </script>
   </body>
 </html>
